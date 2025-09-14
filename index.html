@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopify </title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<header class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+    <div class="text-2xl font-bold text-green-600">Shopify</div>
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-green-600 font-medium transition">Home</a>
+      <a href="#men" class="hover:text-green-600 font-medium transition">Men</a>
+      <a href="#women" class="hover:text-green-600 font-medium transition">Women</a>
+      <a href="#kids" class="hover:text-green-600 font-medium transition">Kids</a>
+      <a href="#about" class="hover:text-green-600 font-medium transition">About</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+      <input type="text" placeholder="Search..." id="searchInput" class="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 hidden sm:block transition">
+      <button id="wishlistBtn" class="hover:text-green-600 transition">Wishlist</button>
+     <button id="cartBtn" class="hover:text-green-600 transition relative">
+  Cart
+  <span id="cartCount" class="absolute -top-2 -right-3 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+</button>
+
+      <button id="profileBtn" class="hover:text-green-600 transition">Profile</button>
+    </div>
+  </div>
+</header>
+
+
+<section class="relative bg-gradient-to-r from-green-400 to-green-600 h-96 flex items-center justify-center text-white text-5xl font-extrabold">
+  <div class="text-center">
+    <h1 class="animate-pulse">Shopify Clone</h1>
+    <p class="mt-4 text-lg font-medium">Modern Online Store Experience</p>
+  </div>
+</section>
+
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-3xl font-bold mb-8 text-center">Shop by Category</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+    <div class="bg-white rounded-lg shadow-lg flex items-center justify-center h-32 font-semibold cursor-pointer hover:scale-105 transition transform">Men</div>
+    <div class="bg-white rounded-lg shadow-lg flex items-center justify-center h-32 font-semibold cursor-pointer hover:scale-105 transition transform">Women</div>
+    <div class="bg-white rounded-lg shadow-lg flex items-center justify-center h-32 font-semibold cursor-pointer hover:scale-105 transition transform">Kids</div>
+    <div class="bg-white rounded-lg shadow-lg flex items-center justify-center h-32 font-semibold cursor-pointer hover:scale-105 transition transform">Electronics</div>
+  </div>
+</section>
+
+
+<section id="men" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-3xl font-bold mb-8">Men's Collection</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden cursor-pointer transition transform hover:-translate-y-1">
+      <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+      <img src="71lp24xBicL._UY1100_.jpg">
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">T-Shirt</h3>
+        <p class="text-gray-500">₹599</p>
+        <button class="mt-3 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Add to Cart</button>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden cursor-pointer transition transform hover:-translate-y-1">
+      <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+        
+        <img src="how_to_dress_well_casual_men_1000.jpg" alt="">
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">Jeans</h3>
+        <p class="text-gray-500">₹1499</p>
+        <button class="mt-3 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="women" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-3xl font-bold mb-8">Women's Collection</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden cursor-pointer transition transform hover:-translate-y-1">
+      <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+        <img src="download (1).jpeg" alt="" height="">
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">Dress</h3>
+        <p class="text-gray-500">₹899</p>
+        <button class="mt-3 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Add to Cart</button>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden cursor-pointer transition transform hover:-translate-y-1">
+      <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+        <img src="download.jpeg" alt="">
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">Bag</h3>
+        <p class="text-gray-500">₹1299</p>
+        <button class="mt-3 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="cartMessage" class="fixed top-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-opacity duration-500">
+  Your cart is saved!
+</div>
+
+
+
+<section id="kids" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <h2 class="text-3xl font-bold mb-8">Kids' Collection</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden cursor-pointer transition transform hover:-translate-y-1">
+      <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+        <img src="download (2).jpeg" alt="">
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">T-Shirt</h3>
+        <p class="text-gray-500">₹399</p>
+        <button class="mt-3 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Add to Cart</button>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden cursor-pointer transition transform hover:-translate-y-1">
+      <div class="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+      <img src="360_F_98091618_yCN1zUmBzQRADLXFKt6eujlgXHaRVnWK.jpg" alt="">
+      </div>
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">Shorts</h3>
+        <p class="text-gray-500">₹499</p>
+        <button class="mt-3 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="bg-gradient-to-r from-green-50 to-green-100 py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-bold mb-6">About Us</h2>
+    <p class="text-gray-700 mb-12 text-lg">We are committed to providing a seamless online shopping experience. Our collections include the latest trends in fashion, electronics, and lifestyle products for everyone.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="text-5xl mb-4 text-green-600">👗</div>
+        <h3 class="font-bold text-xl mb-2">Fashion</h3>
+        <p class="text-gray-600">Trendy and stylish clothing for all ages and occasions.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="text-5xl mb-4 text-green-600">📦</div>
+        <h3 class="font-bold text-xl mb-2">Fast Delivery</h3>
+        <p class="text-gray-600">Quick shipping to ensure your products reach you on time.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-2">
+        <div class="text-5xl mb-4 text-green-600">💳</div>
+        <h3 class="font-bold text-xl mb-2">Secure Payments</h3>
+        <p class="text-gray-600">Safe and secure checkout with multiple payment options.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-100 mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <div>
+      <h4 class="font-bold mb-4">Online Store</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li class="hover:text-green-600 cursor-pointer">Men</li>
+        <li class="hover:text-green-600 cursor-pointer">Women</li>
+        <li class="hover:text-green-600 cursor-pointer">Kids</li>
+        <li class="hover:text-green-600 cursor-pointer">Electronics</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4">Customer Service</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li class="hover:text-green-600 cursor-pointer">Contact Us</li>
+        <li class="hover:text-green-600 cursor-pointer">Track Order</li>
+        <li class="hover:text-green-600 cursor-pointer">Returns</li>
+        <li class="hover:text-green-600 cursor-pointer">FAQs</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4">About</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li class="hover:text-green-600 cursor-pointer">Our Story</li>
+        <li class="hover:text-green-600 cursor-pointer">Careers</li>
+        <li class="hover:text-green-600 cursor-pointer">Press</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4">Follow Us</h4>
+      <ul class="space-y-2 text-gray-600">
+        <li class="hover:text-green-600 cursor-pointer">Facebook</li>
+        <li class="hover:text-green-600 cursor-pointer">Twitter</li>
+        <li class="hover:text-green-600 cursor-pointer">Instagram</li>
+        <li class="hover:text-green-600 cursor-pointer">LinkedIn</li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center py-4 text-gray-500 border-t">© 2025 Shopify Clone</div>
+</footer>
+
+<!-- JS Hooks -->
+<script src="script.js">
+
+</script>
+<div id="cartMessage" class="fixed top-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-opacity duration-500">
+  Your cart is saved!
+</div>
+
+
+</body>
+</html>
