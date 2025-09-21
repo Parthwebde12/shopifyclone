@@ -1,5 +1,100 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // User Account and Cart Logic
+  // User Account, Cart, Wishlist, Search, and UI Logic
+  // Wishlist logic
+  window.addToWishlist = function(item) {
+    if (!currentUser) {
+      showUserModal();
+      return;
+    }
+    let users = getUsers();
+    if (!users[currentUser].wishlist) users[currentUser].wishlist = [];
+    if (!users[currentUser].wishlist.includes(item)) {
+      users[currentUser].wishlist.push(item);
+      saveUsers(users);
+      showCartMessage('Added to wishlist!');
+    } else {
+      showCartMessage('Already in wishlist!');
+    }
+    renderWishlist();
+  };
+
+  function renderWishlist() {
+    let users = getUsers();
+    const wishlistBtn = document.getElementById('wishlistBtn');
+    if (currentUser && users[currentUser] && Array.isArray(users[currentUser].wishlist)) {
+      wishlistBtn.textContent = `Wishlist (${users[currentUser].wishlist.length})`;
+    } else {
+      wishlistBtn.textContent = 'Wishlist';
+    }
+  }
+
+  document.getElementById('wishlistBtn').addEventListener('click', function() {
+    let users = getUsers();
+    if (!currentUser || !users[currentUser] || !Array.isArray(users[currentUser].wishlist) || users[currentUser].wishlist.length === 0) {
+      showCartMessage('Wishlist is empty!');
+      return;
+    }
+    alert('Wishlist: ' + users[currentUser].wishlist.join(', '));
+  });
+
+  // Live search logic
+  document.getElementById('searchInput').addEventListener('input', function(e) {
+    const query = e.target.value.toLowerCase();
+    document.querySelectorAll('.grid .bg-white').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(query) ? '' : 'none';
+    });
+  });
+
+  // Logout logic
+  function logoutUser() {
+    localStorage.removeItem('currentUser');
+    currentUser = null;
+    updateCartCount();
+    renderWishlist();
+    showCartMessage('Logged out!');
+    setTimeout(() => location.reload(), 800);
+  }
+  // Add logout button to profile modal
+  const userModal = document.getElementById('userModal');
+  if (userModal && !document.getElementById('logoutBtn')) {
+    const btn = document.createElement('button');
+    btn.id = 'logoutBtn';
+    btn.className = 'mt-2 w-full bg-red-500 text-white py-2 rounded hover:bg-red-600';
+    btn.textContent = 'Logout';
+    btn.onclick = logoutUser;
+    userModal.querySelector('form').insertAdjacentElement('afterend', btn);
+  }
+
+  // Cart preview modal
+  function showCartPreview() {
+    if (!currentUser) {
+      showUserModal();
+      return;
+    }
+    let cart = getCurrentCart();
+    if (!Array.isArray(cart) || cart.length === 0) {
+      showCartMessage('Cart is empty!');
+      return;
+    }
+    alert('Cart: ' + cart.join(', '));
+  }
+  document.getElementById('cartBtn').addEventListener('dblclick', showCartPreview);
+
+  // Add to wishlist buttons for each product
+  document.querySelectorAll('.bg-white .p-4').forEach(card => {
+    const name = card.querySelector('h3')?.textContent;
+    if (name && !card.querySelector('.wishlist-btn')) {
+      const btn = document.createElement('button');
+      btn.className = 'wishlist-btn mt-2 w-full bg-pink-500 text-white py-2 rounded hover:bg-pink-600';
+      btn.textContent = 'Add to Wishlist';
+      btn.onclick = function() { window.addToWishlist(name); };
+      card.appendChild(btn);
+    }
+  });
+
+  // Initial render
+  renderWishlist();
   let currentUser = localStorage.getItem('currentUser') || null;
 
   function showUserModal() {
