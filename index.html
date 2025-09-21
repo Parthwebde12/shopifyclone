@@ -243,56 +243,7 @@
 
 
 <script src="script.js"></script>
-<script>
-// Buy Now logic and order history rendering
-document.addEventListener('DOMContentLoaded', function() {
-  window.buyNow = function(item, price) {
-    // Check user
-    let currentUser = localStorage.getItem('currentUser');
-    if (!currentUser) {
-      document.getElementById('userModal').classList.remove('hidden');
-      return;
-    }
-    let users = JSON.parse(localStorage.getItem('users') || '{}');
-    if (!users[currentUser]) return;
-    if (!Array.isArray(users[currentUser].orders)) users[currentUser].orders = [];
-    const order = { item, price, date: new Date().toLocaleString() };
-    users[currentUser].orders.push(order);
-    localStorage.setItem('users', JSON.stringify(users));
-    showPurchaseModal(order);
-    renderOrderHistory();
-  };
 
-  function showPurchaseModal(order) {
-    document.getElementById('purchaseDetails').innerHTML = `<strong>${order.item}</strong> for ₹${order.price}<br><span class='text-sm text-gray-500'>${order.date}</span>`;
-    document.getElementById('purchaseModal').classList.remove('hidden');
-  }
-  document.getElementById('closePurchaseModal').onclick = function() {
-    document.getElementById('purchaseModal').classList.add('hidden');
-  };
-
-  function renderOrderHistory() {
-    let currentUser = localStorage.getItem('currentUser');
-    let users = JSON.parse(localStorage.getItem('users') || '{}');
-    const section = document.getElementById('orderHistorySection');
-    const list = document.getElementById('orderHistoryList');
-    if (currentUser && users[currentUser] && Array.isArray(users[currentUser].orders) && users[currentUser].orders.length > 0) {
-      section.classList.remove('hidden');
-      list.innerHTML = users[currentUser].orders.map(o => `<li class='bg-white rounded shadow p-3 flex justify-between items-center'><span>${o.item}</span><span class='text-green-600 font-bold'>₹${o.price}</span><span class='text-xs text-gray-400'>${o.date}</span></li>`).join('');
-    } else {
-      section.classList.add('hidden');
-      list.innerHTML = '';
-    }
-  }
-
-  // Render order history on login
-  document.getElementById('registerForm').addEventListener('submit', function() {
-    setTimeout(renderOrderHistory, 300);
-  });
-  // Also render on page load
-  renderOrderHistory();
-});
-</script>
 
 
 </body>
