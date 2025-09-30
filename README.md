@@ -1,5 +1,10 @@
-##Copyright (c) 2025 Parth Wakodikar.
-All rights reserved. No part of this project may be copied, modified, or distributed without prior permission.
+---
+
+## 📜 Copyright
+
+© 2025 Your Name. All rights reserved.  
+No part of this project may be reproduced, distributed, or transmitted in any form or by any means, without prior written permission.
+--
 
 # Shopify Clone
 
