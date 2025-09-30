@@ -1,3 +1,6 @@
+##Copyright (c) 2025 Parth Wakodikar.
+All rights reserved. No part of this project may be copied, modified, or distributed without prior permission.
+
 # Shopify Clone
 
 A **Shopify-like e-commerce website clone** built using **HTML, CSS, and JavaScript**. This project focuses on implementing dynamic UI interactions and responsive design without using any frameworks.
@@ -19,3 +22,7 @@ A **Shopify-like e-commerce website clone** built using **HTML, CSS, and JavaScr
 - Creating a responsive and user-friendly interface
 
 > This project helped me strengthen my JavaScript logic and understand core web development principles before moving on to frameworks like React or full-stack development.
+
+
+
+
